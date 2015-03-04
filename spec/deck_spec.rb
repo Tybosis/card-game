@@ -41,6 +41,6 @@ describe Deck do
     @deck.draw(55).must_match "aren't enough cards"
     @deck = Deck.new
     @deck.draw(50)
-    @deck.draw(3).must_match "aren't enough cards"r
+    @deck.draw(3).must_match "aren't enough cards"
   end
 end
