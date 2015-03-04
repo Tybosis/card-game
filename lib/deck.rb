@@ -13,16 +13,17 @@ class Deck
   end
 
   def shuffle!
-    @cards.shuffle!
+    cards.shuffle!
   end
 
   def draw(n = 1)
+    return "There aren't enough cards in the deck!" if n > cards.count
     hand = []
-    n.times { hand << @cards.shift }
+    n.times { hand << cards.shift }
     hand
   end
 
   def count
-    @cards.count
+    cards.count
   end
 end

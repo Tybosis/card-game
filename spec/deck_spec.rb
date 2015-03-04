@@ -36,4 +36,11 @@ describe Deck do
     @deck.draw
     @deck.count.must_equal 51
   end
+
+  it 'returns a string if a player tries to draw too many cards' do
+    @deck.draw(55).must_match "aren't enough cards"
+    @deck = Deck.new
+    @deck.draw(50)
+    @deck.draw(3).must_match "aren't enough cards"r
+  end
 end
